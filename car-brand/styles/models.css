@@ -1,0 +1,112 @@
+.models {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 1rem;
+}
+
+.models > * {
+    flex: 0 30%;
+    margin-top: 2rem;
+    margin-right: 3%;
+    border: 0.1rem solid rgb(7, 95, 29);
+}
+
+.models img {
+    height: 20rem;
+    width: 100%;
+}
+
+.models h2 {
+    font-size: 1.7rem;
+    text-align: center;
+    padding-bottom: 0.2rem;
+}
+
+.models h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: 0.2rem;
+}
+
+.models p {
+    font-size: 1.2rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.add-car-modal-button {
+    font-size: 1.5rem;
+    color:rgb(7, 95, 29);
+    display: block;
+    margin: 0rem auto 0rem auto;
+    width: 10rem;
+    height: 3rem;
+}
+
+.add-car-modal-button:hover {
+    cursor: pointer;
+}
+
+/* Modal */
+
+.modal {
+    background-color: rgba(7, 6, 6, 0.9);
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    height: 100vw;
+    width: 100vw;
+    z-index: 1;
+}
+
+form {
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: 
+        "nameLabel nameInput"
+        "imgNameLabel imgNameInput"
+        "costLabel costInput"
+        "descLabel descInput"
+        "button button";
+    margin: 5rem 20rem 0rem 20rem;
+    padding: 1rem;
+    background-color: rgba(209, 201, 201, 0.979);
+    font-size: 1.5rem;
+}
+
+#name-label {
+    grid-area: nameLabel;
+}
+
+#name {
+    grid-area: nameInput;
+}
+
+#img-name-label {
+    grid-area: imgNameLabel;
+}
+
+#img-name {
+    grid-area: imgNameInput;
+}
+
+#cost-label {
+    grid-area: costLabel;
+}
+
+#cost {
+    grid-area: costInput;
+}
+
+#desc-label {
+    grid-area: descLabel;
+}
+
+#desc {
+    grid-area: descInput;
+}
+
+form button {
+    grid-area: button;
+    font-size: 1.5rem;
+    color:rgb(7, 95, 29);
+}

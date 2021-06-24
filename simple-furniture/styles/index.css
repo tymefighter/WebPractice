@@ -1,0 +1,47 @@
+.jumbotron {
+    background-color: #87F397;
+    padding: 2rem 0em 1em 1rem;
+    border-bottom: 0.5em solid #087F0F;
+}
+
+.jumbotron > h1 {
+    margin: 0rem;
+    color: #874515;
+    font-size: 3rem;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+
+.jumbotron > p {
+    color: #874515;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.card {
+    display: inline-block;
+    width: 30%;
+    border: 0.2rem solid #874515;
+    padding: 0.2em;
+    margin: 2rem 1rem 1rem 0rem;
+    background-color: #BCFAF1;
+    vertical-align: top;
+}
+
+.card > h2 {
+    text-align: center;
+    color: #874515;
+    font-size: 2rem;
+}
+
+.card > img {
+    height: 15rem;
+    width: 80%;
+    padding: 3rem;
+}
+
+.card > p {
+    height: 5rem;
+    color: #874515;
+    font-size: 1.1rem;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}

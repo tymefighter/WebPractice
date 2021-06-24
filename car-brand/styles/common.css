@@ -1,0 +1,82 @@
+/* Body */
+
+body {
+    margin: 0rem;
+    color: rgb(7, 95, 29);
+}
+
+/* Logo */
+
+.logo {
+    height: 3rem;
+    width: 3rem;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    margin-bottom: 1rem;
+    border-bottom: 0.2rem solid rgb(7, 95, 29);
+}
+
+header img {
+    margin-left: auto;
+    border-right: 0.3rem solid rgb(7, 95, 29);
+}
+
+header span {
+    color: rgb(7, 95, 29);
+    font-size: 3rem;
+    font-weight: 900;
+    font-style: italic;
+    margin: 0rem auto 0rem 1rem;
+}
+
+/* Nav */
+
+nav {
+    display: flex;
+    position: sticky;
+    top: 0rem;
+    left: 0rem;
+    background-color: white;
+}
+
+nav a {
+    color: rgb(7, 95, 29);
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    border-top: 0.2rem solid rgb(7, 95, 29);
+    padding: 0rem 5rem 0rem 5rem;
+}
+
+footer > * {
+    flex-grow: 1;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0rem;
+}
+
+footer li {
+    font-size: 1.2rem;
+}
+
+footer h2 {
+    color: rgb(7, 95, 29);
+}
+
+.locations ul {
+    column-count: 4;
+    color: rgb(7, 95, 29);
+}

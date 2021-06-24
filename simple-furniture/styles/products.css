@@ -1,0 +1,48 @@
+.products > div {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 3rem;
+}
+
+.products > h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #874515;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.products > div > * {
+    flex: 1 20%;
+}
+
+.product-card {
+    border: 0.1rem solid black;
+    background-color: #BCFAF1;
+    padding: 0rem;
+    color: #874515;
+}
+
+.product-card > img {
+    height: 20rem;
+    width: 100%;
+}
+
+.product-card > h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.product-card > ul {
+    list-style: none;
+    padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+.product-card li {
+    font-size: 1.2rem;
+}
+
+.spacer-card {
+    border: 0.1rem solid black;
+    background-color: #BCFAF1;
+}
