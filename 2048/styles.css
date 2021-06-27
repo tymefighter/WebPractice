@@ -61,4 +61,23 @@ h2 {
   margin: 0rem auto 0rem 0.5rem;
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal > p {
+  background-color: #e6ded5;
+  font-size: 1.5rem;
+  width: fit-content;
+  margin: 2rem auto 0 auto;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  border: 0.4rem solid #ac8c6f;
+}
+
 /*# sourceMappingURL=styles.css.map */

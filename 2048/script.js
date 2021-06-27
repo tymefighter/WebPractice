@@ -8,6 +8,23 @@
         return arr[getRandomInteger(arr.length)];
     }
 
+    const createModal = function() {
+        const div = document.createElement("div");
+        div.classList.add("modal");
+
+        const body = document.querySelector("body");
+        body.append(div);
+
+        return div;
+    }
+
+    const HELP_CONTENT = 
+        `Welcome to a 2048 game version built by tymefighter.
+        Use your arrow keys to control the movement of
+        numbers within the grid. You WIN if one of the cell's
+        value reaches 2048, and LOSE if you have no possible
+        moves. All the best !! (from tymefighter)`;
+
     const moveAlongArr = function(arr) {
         const newArr = [];
         let points = 0, prev = null;
@@ -230,6 +247,32 @@
                 }
             }
         },
+        addButtonListeners() {
+            document
+            .querySelector(".new-game")
+            .addEventListener("click", () => {
+                // const modalDiv = createModal();
+                // const form = document.createElement("form");
+            });
+
+            document
+            .querySelector(".help")
+            .addEventListener("click", () => {
+                const modalDiv = createModal();
+                const p = document.createElement("p");
+
+                p.innerText = HELP_CONTENT;
+                modalDiv.append(p);
+
+                p.addEventListener("click", (event) => {
+                    event.stopPropagation();
+                });
+
+                modalDiv.addEventListener("click", () => {
+                    modalDiv.remove();
+                });
+            });
+        },
         init() {
             this.buildGrid();
             window.addEventListener("keydown", (event) => {
@@ -252,6 +295,8 @@
                 }
                 console.log(event.code, typeof event.code);
             });
+
+            this.addButtonListeners();
         },
         reset() {
             this.dom.grid.innerHTML = "";
