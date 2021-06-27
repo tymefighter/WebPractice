@@ -25,6 +25,18 @@
         value reaches 2048, and LOSE if you have no possible
         moves. All the best !! (from tymefighter)`;
 
+    const COLOR_LIST = [
+        "rgb(230, 222, 213)", "rgb(247, 211, 144)", "rgb(247, 160, 144)", 
+        "rgb(224, 93, 0)", "rgb(223, 42, 111)", "rgb(223, 42, 205)",
+        "rgb(153, 42, 223)", "rgb(121, 17, 186)", "rgb(76, 17, 186)",
+        "rgb(20, 17, 186)", "rgb(8, 7, 120)"
+    ];
+
+    const TEXT_COLOR_LIST = [
+        "rgb(172, 140, 111)", "rgb(172, 140, 111)", "rgb(172, 140, 111)",
+        "white", "white", "white", "white", "white", "white", "white", "white"
+    ];
+
     const moveAlongArr = function(arr) {
         const newArr = [];
         let points = 0, prev = null;
@@ -238,11 +250,11 @@
             for(let i = 0;i < numRows;i++) {
                 for(let j = 0;j < numCols;j++) {
                     const div = document.createElement("div");
-                    div.classList.add(`cell-${i}-${j}`);
-
-                    div.innerHTML = 
-                        `<span>${grid[i][j] === null ? "" : grid[i][j].toString()}</span>`;
-
+                    const span = document.createElement("span");
+                    span.classList.add(`cell-${i}-${j}`);
+                    span.innerText = grid[i][j] === null ? "" : grid[i][j].toString()
+                    
+                    div.append(span);
                     this.dom.grid.append(div);
                 }
             }
@@ -333,9 +345,40 @@
 
             for(let i = 0;i < numRows;i++) {
                 for(let j = 0;j < numCols;j++) {
-                    const div = this.dom.grid.querySelector(`.cell-${i}-${j}`);
-                    div.innerHTML = 
-                        `<span>${grid[i][j] === null ? "" : grid[i][j].toString()}</span>`;
+                    const span = this.dom.grid.querySelector(`.cell-${i}-${j}`);
+
+                    if(grid[i][j] !== null) {
+                        span.innerText = grid[i][j].toString();
+                        console.log(Math.floor(Math.log2(grid[i][j])) + 1);
+                        switch(Math.floor(Math.log10(grid[i][j])) + 1) {
+                            case 1:
+                                span.style.fontSize = "3rem";
+                                span.style.marginTop = "0.5rem";
+                                break;
+
+                            case 2:
+                                span.style.fontSize = "2rem";
+                                span.style.marginTop = "0.8rem";
+                                break;
+
+                            case 3:
+                                span.style.fontSize = "1.6rem";
+                                span.style.marginTop = "1rem";
+                                break;
+                            
+                            case 4:
+                                span.style.fontSize = "1.4rem";
+                                span.style.marginTop = "1.5rem";
+                                break;
+                        }
+                        const colorIndex = Math.log2(grid[i][j]) - 1
+                        span.style.color = TEXT_COLOR_LIST[colorIndex];
+                        span.parentNode.style.backgroundColor = COLOR_LIST[colorIndex];
+                    }
+                    else {
+                        span.innerText = "";
+                        span.parentNode.style.backgroundColor = COLOR_LIST[0];
+                    } 
                 }
             }
 
