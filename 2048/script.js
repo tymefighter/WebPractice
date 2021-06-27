@@ -18,6 +18,22 @@
         return div;
     }
 
+    const createTextModal = function(text) {
+        const modalDiv = createModal();
+        const p = document.createElement("p");
+
+        p.innerText = text;
+        modalDiv.append(p);
+
+        p.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+
+        modalDiv.addEventListener("click", () => {
+            modalDiv.remove();
+        });
+    }
+
     const HELP_CONTENT = 
         `Welcome to a 2048 game version built by tymefighter.
         Use your arrow keys to control the movement of
@@ -295,21 +311,7 @@
 
             document
             .querySelector(".help")
-            .addEventListener("click", () => {
-                const modalDiv = createModal();
-                const p = document.createElement("p");
-
-                p.innerText = HELP_CONTENT;
-                modalDiv.append(p);
-
-                p.addEventListener("click", (event) => {
-                    event.stopPropagation();
-                });
-
-                modalDiv.addEventListener("click", () => {
-                    modalDiv.remove();
-                });
-            });
+            .addEventListener("click", () => createTextModal(HELP_CONTENT));
         },
         init() {
             this.buildGrid();
@@ -384,11 +386,15 @@
 
             switch(controller.getGameStatus()) {
                 case WIN:
-                    this.dom.scoreHeading.innerText = "You Win !";
+                    text = `You Win ! Your Score is ${controller.getScore()}`;
+                    this.dom.scoreHeading.innerText = text;
+                    createTextModal(text);
                     break;
 
                 case LOSE:
-                    this.dom.scoreHeading.innerText = "You Lose...";
+                    text = `You Lose...Your Score is ${controller.getScore()}`;
+                    this.dom.scoreHeading.innerText = text;
+                    createTextModal(text);
                     break;
 
                 case IN_PROGRESS:
