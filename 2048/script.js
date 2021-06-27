@@ -251,8 +251,34 @@
             document
             .querySelector(".new-game")
             .addEventListener("click", () => {
-                // const modalDiv = createModal();
-                // const form = document.createElement("form");
+                const modalDiv = createModal();
+                const form = document.createElement("form");
+
+                form.innerHTML =
+                `
+                    <label for="numRows">Number of Rows: </label>
+                    <input type="number" name="numRows" id="numRows"/>
+
+                    <label for="numCols">Number of Columns: </label>
+                    <input type="number" name="numCols" id="numCols"/>
+
+                    <button type="button">Start</button>
+                `;
+                const numRowsInput = form.querySelector("#numRows");
+                const numColsInput = form.querySelector("#numCols");
+
+                modalDiv.append(form);
+
+                form.querySelector("button").addEventListener("click", () => {
+                    controller.reset(
+                        parseInt(numRowsInput.value), 
+                        parseInt(numColsInput.value)
+                    );
+                    modalDiv.remove();
+                });
+
+                form.addEventListener("click", event => event.stopPropagation());
+                modalDiv.addEventListener("click", () => modalDiv.remove());
             });
 
             document

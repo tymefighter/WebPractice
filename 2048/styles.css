@@ -79,5 +79,32 @@ h2 {
   border-radius: 0.7rem;
   border: 0.4rem solid #ac8c6f;
 }
+.modal label, .modal input {
+  font-size: 1.5rem;
+}
+.modal input {
+  height: 2rem;
+  width: 15rem;
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #ac8c6f;
+}
+.modal button {
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  width: 7rem;
+  font-size: 1.5rem;
+  color: #ac8c6f;
+}
+.modal form {
+  padding: 3rem;
+  width: fit-content;
+  margin: 5rem auto 0 auto;
+  background-color: #e6ded5;
+  border-radius: 0.7rem;
+  border: 0.4rem solid #ac8c6f;
+}
 
 /*# sourceMappingURL=styles.css.map */
