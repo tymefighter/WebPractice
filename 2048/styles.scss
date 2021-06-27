@@ -1,0 +1,69 @@
+$body-bg: rgb(216, 213, 210);
+$main-color: rgb(172, 140, 111);
+$inner-color: rgb(230, 222, 213);
+
+body {
+    color: $main-color;
+    padding: 2rem 10% 0rem 10%;
+    background-color: $body-bg;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-rows: repeat(4, 5rem);
+    grid-template-columns: repeat(4, 5rem);
+    background-color: $main-color;
+    border: 0.7rem solid $main-color;
+    border-radius: 0.7rem;
+    width: min-content;
+    margin: 0rem auto 2rem auto;
+
+    div {
+        border-radius: 0.5rem;
+        border: 0.2rem solid $main-color;
+        background-color: $inner-color;
+    }
+
+    span {
+        display: block;
+        font-size: 3rem;
+        margin: 0.5rem auto;
+        width: min-content;
+        height: min-content;
+    }
+}
+
+.btn-group  {
+    display: flex;
+
+    > button {
+        height: 2rem;
+        width: 15rem;
+        background-color: $main-color;
+        color: white;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        font-weight: 900%;
+        border: 0.1rem solid $main-color;
+        border-radius: 0.7rem;
+    }
+}
+
+.new-game {
+    margin: 0rem 0.5rem 0rem auto;
+}
+
+.help {
+    margin: 0rem auto 0rem 0.5rem;
+}
